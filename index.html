@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <title>Recipe App</title>
+</head>
+<body>
+  <header>
+    <div class="brand">
+    <img src="https://files.oaiusercontent.com/file-MBmdtqbu6NiYUHzgMT6FVu?se=2025-02-19T12%3A26%3A50Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D1a2b9baa-096a-480a-b85f-0c591a7ab586.webp&sig=Xf1TM%2BzszQHAZR/C58IlBCyI8XeIV39oqKpRoVuM1So%3D" alt="Logo">
+    <h1 class="website-name">Recipe App</h1>
+  </div>
+  <div class="search-container">
+    <input type="text" placeholder="Search for recipes..." id="search-box">
+    <button class="search-btn">🔍</button>
+  </div>
+    <nav>
+      <a href="#" id="home">Home</a>
+      <a href="#" id="categories">Categories</a>
+      <a href="#" id="about-us">About Us</a>
+      <a href="#" id="contact-us">Contact Us</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Recipes You Can Try</h2>
+    <div id="recipe-grid" class="recipe-grid"></div> <!-- Grid container -->
+  </main>
+  <div class="popup" id="popup">
+    <div class="popup-content">
+    </div>
+  </div>
+</body>
+<script src = "script.js"></script>
+</html>

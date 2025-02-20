@@ -1,0 +1,327 @@
+/* Reset some default styles */
+body, h1, nav, a, input {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f3e1c7; 
+  color: #333;
+  line-height: 1.6;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 75px; /* Space between logo and text */
+}
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(150deg, #d76d77 10%, #ff9147 90%); /* Darker warm gradient */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: fadeIn 1s ease-out;
+  transition: background 0.3s ease;
+  padding: 15px 40px;
+}
+/* Logo styles */
+header img {
+  margin-left: 10px;
+  width: 50px; /* Adjust this size */
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Subtle shadow for depth */
+}
+
+/* Website name styles */
+.website-name {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+  font-family: 'Poppins', sans-serif; /* Modern, clean font */
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between input and button */
+}
+
+input {
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 1rem;
+  outline: none;
+  width: 300px;
+  margin-left: 50px;
+  transition: all 0.3s ease;
+  border: 1px solid #ccc;
+}
+.search-btn {
+  padding: 8px 12px;
+  background-color: #d76d77; /* Button color */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.search-btn:hover {
+  background-color: #e76f71;
+}
+
+/* Search bar focus effect */
+input:focus {
+  width: 350px; /* Expands on focus */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* Navigation link styles */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 25px; /* Rounded corners */
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+}
+
+/* Navigation link hover styles */
+nav a:hover {
+  background: rgba(255, 255, 255, 0.4); /* Brighter on hover */
+  color: #fff;
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Active link styles (optional, to highlight the current page) */
+nav a.active {
+  background: rgba(255, 255, 255, 0.4); /* Brighter for active link */
+  font-weight: bold;
+  color: #fff;
+}
+main h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 3px solid #ff6b6b;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+#recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-rows: repeat(3, 1fr); /* 3 rows */
+  gap: 15px;
+  margin: 0; /* Remove margin */
+  padding: 10px;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  box-sizing: border-box;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px; /* Fixed height */
+  object-fit: cover; /* Ensures image fills space without empty gaps */
+  border-radius: 10px; /* Ensures rounded corners */
+
+}
+
+.recipe-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+/* Popup Background */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  width: 60%; /* Increased width */
+  max-width: 700px; /* Prevents excessive stretching */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  overflow-y: auto; /* Add scroll if content is too long */
+  max-height: 80vh; /* Prevents popup from being too tall */
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  height: 20px;
+  top: 5px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #8a0101;
+}
+
+.close:hover {
+  color: rgb(110, 107, 107);
+}
+
+/* Image Styling */
+.popup-content img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  max-width: 550px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Headings */
+.popup-content h2 {
+  margin: 10px 0;
+  font-size: 22px;
+  color: #333;
+}
+
+/* Ingredient & Instruction Titles */
+.popup-content h4 {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #555;
+}
+
+/* Ingredients and Instructions */
+.ingrediants, .instructions {
+  text-align: left;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Ingredients List */
+.ingrediants ul {
+  margin-left: 15px;
+  list-style-type: disc;
+}
+
+.popup-content li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+/* Responsive */
+@media (max-width: 500px) {
+  .popup-content {
+    width: 90%;
+  }
+}
+
+
+/* Add a subtle animation to the header */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  /* Adjust header layout for smaller screens */
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 30px;
+    text-align: center;
+  }
+  .search-container input {
+    width: 200px; /* Adjust search input width */
+    margin-left: 20px;
+  }
+  /* Adjust the navigation bar for mobile */
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  /* Adjust website name size for mobile */
+  .website-name {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+
+  /* Mobile-specific link padding */
+  nav a {
+    padding: 8px 12px;
+  }
+  #recipe-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+  }
+}
+@media screen and (max-width: 480px) {
+  #recipe-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+  }
+  .brand {
+    gap: 20px;
+  }
+  .search-container input {
+    width: 150px; /* Smaller input on mobile */
+    margin-left: 10px;
+  }
+  .website-name {
+    font-size: 1.2rem;
+  }
+}
