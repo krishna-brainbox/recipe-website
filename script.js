@@ -109,6 +109,12 @@ function searchRecipes() {
   let query = document.querySelector('#search-box').value.toLowerCase().trim();
   if (!query) {
     displayrandomrecipes(recipes,12);
+    const cardBtn = document.querySelectorAll(".recipe-card");
+    cardBtn.forEach((card) => {
+      card.addEventListener("click",(event) => {
+        recipePopup(event.currentTarget.id);
+      });
+    });
     return
   };
   let results = recipes.filter(recipe => 
